@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoreline Detection Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Shoreline Detection</h1>
+    </header>
+    <main>
+        <h2>Upload a Georeferenced Image</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".tif,.tiff,.png,.jpg,.jpeg" required>
+            <button type="submit">Upload & Process</button>
+        </form>
+    </main>
+</body>
+</html>
