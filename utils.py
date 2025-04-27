@@ -3,8 +3,8 @@ import os
 import zipfile
 import numpy as np
 import cv2
-import torch
-from torchvision import transforms
+# import torch
+# from torchvision import transforms
 import geopandas as gpd
 import shutil
 from shapely import ops
@@ -13,9 +13,9 @@ from shapely.geometry import MultiLineString
 from shapely.ops import nearest_points
 import leafmap.foliumap as leafmap
 from werkzeug.utils import secure_filename
-from osgeo import gdal, osr
+# from osgeo import gdal, osr
 import networkx as nx
-from model import build_unet
+# from model import build_unet
 from skimage.morphology import skeletonize
 import traceback
 import uuid
