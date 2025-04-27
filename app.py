@@ -316,7 +316,11 @@ CORS(app)
 #     app.run(debug=True)
 @app.route('/')
 def index():
-        return render_template('index.html', map_html=map_html,)
+        m = leafmap.Map(center=[6.5244, 3.3792], zoom=10)
+        m.add_basemap("HYBRID")
+        m.add_layer_control()
+        map_html = m._repr_html_()
+        return render_template('index.html', map_html=map_html)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))  # Render uses PORT env var
     app.run(host="0.0.0.0", port=port)
