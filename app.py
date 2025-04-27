@@ -36,8 +36,6 @@ from utils import (
     zip_shapefile,
     normalize_line,
     extract_closest_point,
-    get_shapefile_crs,
-    get_shapefile_bounds,
 
 )
 
