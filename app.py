@@ -14,7 +14,7 @@ from shapely.geometry import MultiLineString
 from shapely.ops import nearest_points
 import leafmap.foliumap as leafmap
 from werkzeug.utils import secure_filename
-from osgeo import gdal, osr
+# from osgeo import gdal, osr
 import networkx as nx
 from model import build_unet
 from skimage.morphology import skeletonize
