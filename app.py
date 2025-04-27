@@ -314,7 +314,9 @@ CORS(app)
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
-
+@app.route('/')
+def index():
+        return render_template('index.html', map_html=map_html,)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))  # Render uses PORT env var
     app.run(host="0.0.0.0", port=port)
