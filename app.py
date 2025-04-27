@@ -39,12 +39,6 @@ from flask import Flask, request, render_template, jsonify, send_file, session, 
 
 # )
 
-from flask import Flask
-from flask_cors import CORS
-import os
-app = Flask(__name__, static_folder="static", template_folder="templates")
-CORS(app)
-
 # app = Flask(__name__)
 # app.secret_key = "your_secret_key_here"
 
@@ -314,13 +308,22 @@ CORS(app)
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+from flask import Flask, render_template
+from flask_cors import CORS
+import os
+import leafmap  # Import the leafmap module
+
+app = Flask(__name__, static_folder="static", template_folder="templates")
+CORS(app)
+
 @app.route('/')
 def index():
-        m = leafmap.Map(center=[6.5244, 3.3792], zoom=10)
-        m.add_basemap("HYBRID")
-        m.add_layer_control()
-        map_html = m._repr_html_()
-        return render_template('index.html', map_html=map_html)
+    m = leafmap.Map(center=[6.5244, 3.3792], zoom=10)
+    m.add_basemap("HYBRID")
+    m.add_layer_control()
+    map_html = m._repr_html_()
+    return render_template('index.html', map_html=map_html)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))  # Render uses PORT env var
     app.run(host="0.0.0.0", port=port)
