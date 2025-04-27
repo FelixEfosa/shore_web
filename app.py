@@ -3,8 +3,8 @@ import os
 import zipfile
 import numpy as np
 import cv2
-import torch
-from torchvision import transforms
+# import torch
+# from torchvision import transforms
 from flask import Flask, request, render_template, jsonify, send_file, session, url_for
 import geopandas as gpd
 import shutil
