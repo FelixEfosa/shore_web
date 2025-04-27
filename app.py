@@ -39,6 +39,12 @@
 
 # )
 
+from flask import Flask
+from flask_cors import CORS
+import os
+app = Flask(__name__, static_folder="static", template_folder="templates")
+CORS(app)
+
 # app = Flask(__name__)
 # app.secret_key = "your_secret_key_here"
 
@@ -308,3 +314,7 @@
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render uses PORT env var
+    app.run(host="0.0.0.0", port=port)
