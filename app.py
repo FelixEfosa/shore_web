@@ -12,7 +12,7 @@ from flask import Flask, request, render_template, jsonify, send_file, session, 
 # from shapely.geometry import LineString, Point
 # from shapely.geometry import MultiLineString
 # from shapely.ops import nearest_points
-# import leafmap.foliumap as leafmap
+import leafmap.foliumap as leafmap
 # from werkzeug.utils import secure_filename
 # # from osgeo import gdal, osr
 # import networkx as nx
@@ -311,7 +311,7 @@ from flask import Flask, request, render_template, jsonify, send_file, session, 
 from flask import Flask, render_template
 from flask_cors import CORS
 import os
-import leafmap  # Import the leafmap module
+# import leafmap  # Import the leafmap module
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
